@@ -9,7 +9,7 @@
   },
   "license": "MIT",
   "main": "src/main/css/project.css",
-  "version": "1.0",
+  "version": "1.0.0",
   "ignore": [
     ".jshintrc",
     "**/*.txt"
