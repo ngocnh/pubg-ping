@@ -1,8 +1,12 @@
 {
-  "name": "ngocnh",
-  "homepage": "http://ngocnh.info",
-  "author": "Ngọc Nguyễn <me@ngocnh.info>",
-  "description": "NgocNH VCard.",
+  "name": "pubg-ping",
+  "description": "PUBG server ping",
+  "homepage": "https://pubg.ngocnh.info",
+  "author": {
+    "name": "Ngoc Nguyen",
+    "email": "me@ngocnh.info",
+    "url": "https://ngocnh.info"
+  },
   "bugs": {
     "url": "https://gitlab.com/ngocnh/hybrid-application/issues"
   },
@@ -10,7 +14,7 @@
     "type": "git",
     "url": "https://gitlab.com/ngocnh/hybrid-application"
   },
-  "version": "0.1.0",
+  "version": "1.0",
   "license": "MIT",
   "devDependencies": {
     "karma": "0.12.x",

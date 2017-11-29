@@ -2,10 +2,14 @@
   "name": "pubg-ping",
   "description": "PUBG server ping",
   "homepage": "http://pubg.ngocnh.info",
-  "author": "Ngoc Nguyen",
+  "author": {
+    "name": "Ngoc Nguyen",
+    "email": "me@ngocnh.info",
+    "url": "https://ngocnh.info"
+  },
   "license": "MIT",
   "main": "src/main/css/project.css",
-  "version": "1.0.0",
+  "version": "1.0",
   "ignore": [
     ".jshintrc",
     "**/*.txt"
