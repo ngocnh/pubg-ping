@@ -1,0 +1,36 @@
+require.config({
+    paths: {
+        // 'jquery': '../assets/js/jquery.min',
+        'jquery': '../libraries/jquery/dist/jquery.min',
+        'angular': '../libraries/angular/angular',
+        'angular-route': '../libraries/angular-route/angular-route',
+        'angular-mocks': '../libraries/angular-mocks/angular-mocks',
+        'angular-sanitize': '../libraries/angular-sanitize/angular-sanitize',
+        'angular-materialize': '../libraries/angular-materialize/src/angular-materialize',
+        'jquery-hammer': '../libraries/materialize/js/jquery.hammer',
+        'hammerjs': '../libraries/materialize/js/hammer.min',
+        'materialize': '../libraries/materialize/dist/js/materialize.min',
+        'bootstrap': '../assets/js/bootstrap.min',
+        'material': '../assets/js/material.min',
+        'material-kit': '../assets/js/material-kit',
+        'translate': '../libraries/angular-translate/angular-translate',
+        'translate-static-loader': '../libraries/angular-translate-loader-static-files/angular-translate-loader-static-files',
+        'translate-handler-log': '../libraries/angular-translate-handler-log/angular-translate-handler-log'
+    },
+    shim: {
+        'jquery': {deps: [], exports: 'jquery'},
+        'angular': {deps: ['jquery'], exports: 'angular'},
+        'angular-route': {deps: ['angular']},
+        'angular-mocks': {deps: ['angular']},
+        'angular-sanitize': {deps: ['angular']},
+        'translate': {deps: ['angular']},
+        'translate-static-loader': {deps: ['translate']},
+        'translate-handler-log': {deps: ['translate']},
+        'materialize': {deps: ['angular']},
+        'angular-materialize': {deps: ['angular', 'materialize']},
+        'bootstrap': {deps: ['jquery']},
+        'material': {deps: ['jquery']},
+        'material-kit': {deps: ['jquery', 'bootstrap', 'material']},
+    },
+    deps: ['boot']
+});

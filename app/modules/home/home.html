@@ -1,0 +1,81 @@
+<div class="col s12 m10 l10 offset-m1 offset-l1">
+    <div class="card-panel" style="padding: 18px;">
+        <ul id="dropdown_action" class="dropdown-content">
+            <li><a ng-click="clearAllLatency()" translate="clear_all"></a></li>
+            <li><a ng-click="saveSettings()" translate="save"></a></li>
+        </ul>
+        <ul id="dropdown_select" class="dropdown-content">
+            <li><a ng-click="selectAll()" translate="check_all"></a></li>
+            <li><a ng-click="unselectAll()" translate="uncheck_all"></a></li>
+        </ul>
+        <ul id="dropdown_region" class="dropdown-content">
+            <li><a ng-click="selectRegion('us')" translate="america"></a></li>
+            <li><a ng-click="selectRegion('eu')" translate="europa"></a></li>
+            <li><a ng-click="selectRegion('as')" translate="asia"></a></li>
+        </ul>
+        <table id="grid" class="highlight striped responsive-table">
+            <thead>
+            <tr>
+                <th class="col-sm-1" data-type="string">
+                    <a class='topbutton dropdown-button btn-flat' data-activates="dropdown_select" dropdown>
+                        <span translate="select"></span>
+                    </a>
+                </th>
+                <th class="col-sm-3" data-type="string">
+                    <a class='topbutton dropdown-button btn-flat' data-activates="dropdown_region" dropdown>
+                        <span translate="server_name"></span>
+                    </a>
+                </th>
+                <th class="col-sm-4" data-type="number" translate="latency"></th>
+                <th class="col-sm-1" data-type="number" translate="average"></th>
+                <th class="col-sm-3" data-type="number">
+                    <a class='topbutton dropdown-button btn-flat' data-activates="dropdown_action" dropdown>
+                        <span translate="action"></span>
+                    </a>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="server in servers">
+                <td>
+                    <input type="checkbox" id="ch_{{server.id}}" ng-model="checkedServer[server.id]"
+                           ng-checked="checkedServer[server.id]"/>
+                    <label for="ch_{{server.id}}"></label>
+                </td>
+                <td>{{server.name}}</td>
+                <td class="latency-list-container">
+                    <div class="latency-container">
+                        <span class="latency" ng-repeat="latency in latencies[server.id]"
+                              ng-bind-html="trustAsHtml(latency.text)"></span>
+                    </div>
+                </td>
+                <td>{{average(server) | number:0}}</td>
+                <td>
+                    <a ng-click="ping(sgit asdasdasdasdasdasdasdasderver)" ng-show="!serverInterval[server.id]"
+                       class="waves-effect waves-orange btn-flat actionbutton" translate="check"></a>
+                    <a ng-click="stop(server)" ng-show="serverInterval[server.id]"
+                       class="waves-effect waves-orange btn-flat actionbutton" translate="stop"></a>
+                    <a ng-click="clear(server)" class="waves-effect waves-orange btn-flat actionbutton"
+                       translate="clear"></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="divider"></div>
+        <div id="imageCell"></div>
+        <br>
+        <center>
+            <a class="waves-effect waves-light btn tooltipped pulse" data-position="top" data-delay="50"
+               data-tooltip="Measure your ping" type="submit" id="pingbutton" ng-click="pingAll()"
+               ng-show="!intervalAll" translate="ping"></a>
+            <a class="waves-effect waves-light btn tooltipped pulse" data-position="top" data-delay="50"
+               data-tooltip="Measure your ping" type="submit" id="stopbutton" ng-click="stopAll()" ng-show="intervalAll"
+               translate="stop"></a>
+            <a class="waves-effect waves-light btn tooltipped" href="#modalinfo" data-position="top" data-delay="50"
+               data-tooltip="Read F.A.Q." translate="help"></a>
+            <a class="waves-effect waves-light btn tooltipped" href="#modalservers" data-position="top" data-delay="50"
+               data-tooltip="List of all AWS servers" translate="list"></a>
+        </center>
+    </div>
+</div>

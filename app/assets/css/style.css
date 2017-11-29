@@ -1,0 +1,14 @@
+@import "../../libraries/materialize/dist/css/materialize.min.css";
+.latency-list-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+    white-space: nowrap;
+}
+.latency-container {
+    display: inline-block;
+}
+.latency {
+  border: none;
+  float: left;
+  padding: 5px;
+}
