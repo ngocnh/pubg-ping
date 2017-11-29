@@ -1,4 +1,4 @@
-# PUBG's Server Ping
+# PUBG's Server Ping [![Build Status](https://travis-ci.org/ngocnh/pubg-ping.svg?branch=master)](https://travis-ci.org/ngocnh/pubg-ping)
 
 PlayerUnknown's Battlegrounds test server ping.
 
