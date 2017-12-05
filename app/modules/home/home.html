@@ -51,7 +51,7 @@
                 </td>
                 <td>{{average(server) | number:0}}</td>
                 <td>
-                    <a ng-click="ping(sgit asdasdasdasdasdasdasdasderver)" ng-show="!serverInterval[server.id]"
+                    <a ng-click="ping(server)" ng-show="!serverInterval[server.id]"
                        class="waves-effect waves-orange btn-flat actionbutton" translate="check"></a>
                     <a ng-click="stop(server)" ng-show="serverInterval[server.id]"
                        class="waves-effect waves-orange btn-flat actionbutton" translate="stop"></a>
